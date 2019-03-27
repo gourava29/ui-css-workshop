@@ -1,8 +1,268 @@
-<html>
-	<head>
-		<title>CSS-Animation</title>
-	</head>
-	<body>
-		<h1>ANIMATION</h1>
-	</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" sizes="16x16" href="images/favicons/favicon.png">
+    <link rel="shortcut icon" sizes="32x32" href="images/favicons/favicon-32.png">
+    <link rel="apple-touch-icon icon" sizes="76x76" href="images/favicons/favicon-76.png">
+    <link rel="apple-touch-icon icon" sizes="120x120" href="images/favicons/favicon-120.png">
+    <link rel="apple-touch-icon icon" sizes="152x152" href="images/favicons/favicon-152.png">
+    <link rel="apple-touch-icon icon" sizes="180x180" href="images/favicons/favicon-180.png">
+    <link rel="apple-touch-icon icon" sizes="192x192" href="images/favicons/favicon-192.png">
+
+    <title>CSS Animation</title>
+    <link rel="stylesheet" type='text/css' media='all' href="css/webslides.css">
+    <link rel="stylesheet" type="text/css" href="animation.css">
+  </head>
+  <body>
+    
+    <main role="main">
+      <article id="webslides" class="vertical">
+        <!-- Quick Guide
+          - Each parent <section> in the <article id="webslides"> element is an individual slide.
+          - Vertical sliding = <article id="webslides" class="vertical">
+          - <div class="wrap"> = container 90% / <div class="wrap size-50"> = 45%;
+        -->
+
+        <section>
+          <div class="wrap aligncenter">
+            <h1><strong>CSS Animation</strong></h1>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section>
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h4><strong>Transitions</strong></h4>
+                <p>Used to change css property smoothly over a duration.</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <pre>{
+  transition: <u>property</u> <u>duration</u> <u>easing-function</u> <u>delay</u>;
+}</pre>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <div class="grid vertical-align">
+              <div class="column">
+                <style>
+                  .box {
+                    height: 50px;
+                    width: 50px;
+                    background: red;
+                    transition: transform 1s;
+                  }
+                  .box:active {
+                    transform: translateX(100px);
+                  }
+                </style>
+                <div class="box"></div>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <pre>&lt;style&gt;
+  .box {
+    height: 50px;
+    width: 50px;
+    background: red;
+    transition: transform 1s;
+  }
+  .box:active {
+    transform: translateX(100px);
+  }
+&lt;/style&gt;
+&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;</pre>
+              </div>
+              <!-- .end .column -->
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section class="slide-top">
+          <div class="wrap">
+            <div class="content-left">
+              <h4><strong>Transition Options</strong></h4>
+            </div>
+            <div class="grid vertical-align">
+              <div class="column">
+                <h5>transition-property</h5>
+                <p>Used to specify the css property on which the transition is applied</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <pre>{
+  transition-property: <u>all | height | width | transform | css_property</u>;
+}</pre>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <div class="grid vertical-align">
+              <div class="column">
+                <style>
+                  .box1 {
+                    height: 50px;
+                    width: 50px;
+                    background: red;
+                    transition: height 1s;
+                  }
+                  .box1:active {
+                    height: 100px;
+                  }
+                </style>
+                <div class="box1"></div>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <pre>&lt;style&gt;
+  .box {
+    height: 50px;
+    width: 50px;
+    background: red;
+    transition: height 1s;
+  }
+  .box:active {
+    height: 100px;
+  }
+&lt;/style&gt;
+&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;</pre>
+              </div>
+              <!-- .end .column -->
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section class="slide-top">
+          <div class="wrap">
+            <div class="content-left">
+              <h4><strong>Transition Options (Contd...)</strong></h4>
+            </div>
+            <div class="grid vertical-align">
+              <div class="column">
+                <h5>transition-duration</h5>(in seconds)
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <pre>{
+  transition-druation: n<strong>S</strong>;
+}</pre>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <div class="grid vertical-align">
+              <div class="column">
+                <h5>transition-delay</h5>
+                <p>Specify the delay time in seconds after which the transition starts</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <pre>{
+  transition-delay: n<strong>S</strong>;
+}</pre>
+              </div>
+              <!-- .end .column -->
+            </div>
+
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section class="slide-top">
+          <div class="wrap">
+            <div class="content-left">
+              <h4><strong>Transition Options (Contd...)</strong></h4>
+            </div>
+            <div class="grid vertical-align">
+              <div class="column">
+                <h5>transition-timing-function</h5>
+                <p>Used to specify the speed behaviour of the animation</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <pre>{
+  transition-timing-function: <u>linear | ease | ease-in | ease-out | ease-in-out | step-start | step-end | steps(int,start|end) | cubic-bezier(n,n,n,n) | initial | inherit</u>;
+}</pre>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <div class="grid vertical-align">
+              <div class="column">
+                <h7><strong>cubic-bezier</strong></h7>
+                <pre>{
+  transition-timing-function: cubic-bezier(p0,p1,p2,p3);
+}</pre>
+                <p>
+                  Used to defined the timing behaviour of the transition in format of a <a href="http://cubic-bezier.com/#.17,.67,.83,.67" target="_blank">cubic-bezier</a> curve.<br/>  P0, P3 being fixed to (0,0) and (1,1) in the curve, p1, p2 being the control points</p>
+              </div>
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section>
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h4><strong>@KEYFRAMES</strong></h4>
+                <p>Used to write animation containing multiple states chained together</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <pre>@keyframes mymove {
+  from {left: 0px;}
+  to {left: 50px;}
+}</pre>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <div class="grid vertical-align">
+              <div class="column">
+                <style>
+                  @keyframes mymove {
+                    from {left: 0px;}
+                    to {left: 200px;}
+                  }
+                  .box2 {
+                    height: 50px;
+                    width: 50px;
+                    background: red;
+                    position: absolute;
+                    animation: mymove 1s infinite;
+                  }
+                </style>
+                <div class="box2"></div>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <pre>&lt;style&gt;
+  @keyframes mymove {
+    from {left: 0px;}
+  	to {left: 200px;}
+  }
+  .box2 {
+    height: 50px;
+    width: 50px;
+    background: red;
+    position: absolute;
+    animation: mymove 1s infinite;
+  }
+&lt;/style&gt;
+&lt;div class=&quot;box2&quot;&gt;&lt;/div&gt;</pre>
+              </div>
+              <!-- .end .column -->
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+      </article>
+    </main>
+    </div>
+    <script src="js/webslides.min.js"></script>
+    <script>
+      window.ws = new WebSlides({
+        loop: false
+      });
+    </script>
+  </body>
 </html>
