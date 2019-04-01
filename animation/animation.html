@@ -210,8 +210,8 @@
               <!-- .end .column -->
               <div class="column">
                 <pre>@keyframes mymove {
-  from {left: 0px;}
-  to {left: 50px;}
+  from {transform: translateX(0px);}
+  to {transform: translateX(200px);}
 }</pre>
               </div>
               <!-- .end .column -->
@@ -220,15 +220,14 @@
               <div class="column">
                 <style>
                   @keyframes mymove {
-                    from {left: 0px;}
-                    to {left: 200px;}
+                    from {transform: translateX(0px);}
+                    to {transform: translateX(200px);}
                   }
                   .box2 {
                     height: 50px;
                     width: 50px;
                     background: red;
-                    position: absolute;
-                    animation: mymove 1s infinite;
+                    animation: mymove .5s infinite;
                   }
                 </style>
                 <div class="box2"></div>
@@ -237,14 +236,13 @@
               <div class="column">
                 <pre>&lt;style&gt;
   @keyframes mymove {
-    from {left: 0px;}
-  	to {left: 200px;}
+    from {transform: translateX(0px);}
+    to {transform: translateX(200px);}
   }
   .box2 {
     height: 50px;
     width: 50px;
     background: red;
-    position: absolute;
     animation: mymove 1s infinite;
   }
 &lt;/style&gt;
@@ -252,6 +250,199 @@
               </div>
               <!-- .end .column -->
             </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section>
+          <div class="wrap">
+            <div class="content-left">
+              <h4><strong>animation Options</strong></h4>
+            </div>
+            <div class="grid vertical-align">
+              <div class="column">
+                <h4><strong>animation-name</strong></h4>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <pre>#box {
+  animation-name: &lt;animation-name&gt;
+}</pre>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <div class="grid vertical-align">
+              <div class="column">
+                <h4><strong>animation-duration</strong></h4>
+                <p>time for which animation has to run(in seconds)</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                  <pre>#box {
+  animation-duration: &lt;animation-duration&gt;<Strong>S</Strong>
+}</pre>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <div class="grid vertical-align">
+              <div class="column">
+                <h4><strong>animation-timing-function</strong></h4>
+                <p>Used to specify the speed behaviour of the animation same as the one in transitions</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <pre>{
+  animation-timing-function: <u>linear | ease | ease-in | ease-out | ease-in-out | step-start | step-end | steps(int,start|end) | cubic-bezier(n,n,n,n) | initial | inherit</u>;
+}</pre>
+              </div>
+              <!-- .end .column -->
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section>
+          <div class="wrap">
+            <div class="content-left">
+              <h4><strong>animation Options (contd...)</strong></h4>
+            </div>
+            <div class="grid vertical-align">
+              <div class="column">
+                <h4><strong>animation-delay</strong></h4>
+                <p>number of seconds after which the animation has to start</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <pre>#box {
+  animation-delay: &lt;animation-delay&gt;<strong>S</strong>
+}</pre>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <div class="grid vertical-align">
+              <div class="column">
+                <h4><strong>animation-iteration-count</strong></h4>
+                <p>Number of times the animation has to repeat</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <pre>#box {
+  animation-iteration-count: <u>number|infinite|initial|inherit;</u>
+}</pre>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <div class="grid vertical-align">
+              <div class="column">
+                <h4><strong>animation-direction</strong></h4>
+                <p>specifies the flow of animation, i.e. forward, reverese, alternate etc.</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <pre>#box {
+  animation-direction: <u>normal|reverse|alternate|alternate-reverse|initial|inherit;</u>
+}</pre>
+              </div>
+              <!-- .end .column -->
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="wrap">
+            <div class="content-left">
+              <h4><strong>animation Options (contd...)</strong></h4>
+            </div>
+            <div class="grid vertical-align">
+              <div class="column">
+                <h4><strong>animation-fill-mode</strong></h4>
+                <p>Specifies which frame style should the element persist after the animation is executed</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <pre>#box {
+  animation-fill-mode: <u>none|forwards|backwards|both|initial|inherit;</u>
+}</pre>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <div class="grid vertical-align">
+              <div class="column">
+                <style>
+                  @keyframes noneFillMode {
+                    from {transform: translateY(0px);background: red;}
+                    to {transform: translateY(50px);background: blue;}
+                  }
+                  #box2 { width: 50px; height: 50px; animation: noneFillMode 2s;}
+                </style>
+                <h6>none</h6>
+                <div id="box2"></div>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <style>
+                  @keyframes noneFillMode {
+                    from {transform: translateY(0px);background: red;}
+                    to {transform: translateY(50px);background: blue;}
+                  }
+                  #box3 { width: 50px; height: 50px; animation: noneFillMode 2s; animation-fill-mode: forwards;}
+                </style>
+                <h6>forwards</h6>
+                <div id="box3"></div>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <style>
+                  @keyframes noneFillMode {
+                    from {transform: translateY(0px);background: red;}
+                    to {transform: translateY(50px);background: blue;}
+                  }
+                  #box4 { width: 50px; height: 50px; animation: noneFillMode 2s; animation-fill-mode: backwards;}
+                </style>
+                <h6>backwards</h6>
+                <div id="box4"></div>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <style>
+                  @keyframes noneFillMode {
+                    from {transform: translateY(0px);background: red;}
+                    to {transform: translateY(50px);background: blue;}
+                  }
+                  #box5 { width: 50px; height: 50px; animation: noneFillMode 2s; animation-fill-mode: both;}
+                </style>
+                <h6>both</h6>
+                <div id="box5"></div>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <div class="grid vertical-align">
+              <div class="column">
+                <h4><strong>animation-play-state</strong></h4>
+                <p>Generally used to pause or resume animation through javascript.</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <pre>#box {
+  animation-play-state: <u>paused|running|initial|inherit;</u>
+}</pre>
+              </div>
+              <!-- .end .column -->
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="wrap aligncenter">
+            <h1><strong>transition vs @keyframes</strong></h1>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section>
+          <div class="wrap aligncenter">
+            <h1><strong>2D Transforms</strong></h1>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section>
+          <div class="wrap aligncenter">
+            <h1><strong>3D Transforms</strong></h1>
           </div>
           <!-- .end .wrap -->
         </section>
