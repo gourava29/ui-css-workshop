@@ -441,6 +441,277 @@
           <!-- .end .wrap -->
         </section>
         <section>
+          <div class="wrap">
+            <div class="grid vertical-align">
+              <div class="column">
+                <h4><strong>Transforms</strong></h4>
+                <p>Used to change position, size and shape of an element</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <pre>{
+  transform: <u>translate | rotate | scale | skew | matrix</u>;
+}</pre>
+              </div>
+              <!-- .end .column -->
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section>
+          <div class="wrap">
+            <div class="content-left">
+              <h4><strong>Transform Options</strong></h4>
+            </div>
+            <div class="grid vertical-align">
+              <div class="column">
+                <h4><strong>translate</strong></h4>
+                <p>Used to change position of an element</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <pre>{
+  transform: <u>translate(x<strong>px</strong>, y<strong>px</strong>) | translateX(x<strong>px</strong>) | translateY(y<strong>px</strong>);</u>
+}</pre>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <div class="grid vertical-align">
+              <div class="column">
+                <style>
+                  .box6 {
+                    width: 50px;
+                    height: 50px;
+                    background: red;
+                    margin: 20px;
+                  }
+                  .transformC {
+                    transform: translate(10px, 10px);
+                  }
+                </style>
+                <div class="box6"></div>
+                <div class="box6 transformC"></div>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <pre>&lt;style&gt;
+  .box6 {
+    width: 50px; height: 50px;
+    background: red;
+    margin: 20px;
+  }
+  .transformC {
+    transform: translate(10px, 10px);
+  }
+&lt;/style&gt;
+&lt;div class=&quot;box6&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;box6 transformC&quot;&gt;&lt;/div&gt;</pre>
+              </div>
+              <!-- .end .column -->
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section>
+          <div class="wrap">
+            <div class="content-left">
+              <h4><strong>Transform Options (Contd...) </strong></h4>
+            </div>
+            <div class="grid vertical-align">
+              <div class="column">
+                <h4><strong>rotate</strong></h4>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <pre>{
+  transform: <u>rotate(x<strong>deg</strong>);</u>
+}</pre>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <div class="grid vertical-align">
+              <div class="column">
+                <style>
+                  .transformR {
+                    transform: rotate(30deg);
+                  }
+                </style>
+                <div class="box6"></div>
+                <div class="box6 transformR"></div>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <pre>&lt;style&gt;
+  .transformR {
+    transform: rotate(30deg);
+  }
+&lt;/style&gt;
+&lt;div class=&quot;box6&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;box6 transformR&quot;&gt;&lt;/div&gt;</pre>
+              </div>
+              <!-- .end .column -->
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section>
+          <div class="wrap">
+            <div class="content-left">
+              <h4><strong>Transform Options (Contd...) </strong></h4>
+            </div>
+            <div class="grid vertical-align">
+              <div class="column">
+                <h4><strong>scale</strong></h4>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <pre>{
+  transform: <u>scale(x, y) | scaleX(x) | scaleY(y);</u>
+}</pre>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <div class="grid vertical-align">
+              <div class="column">
+                <style>
+                  .transformS {
+                    transform: scale(2, 2);
+                  }
+                </style>
+                <div class="box6"></div>
+                <div class="box6 transformS"></div>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <pre>&lt;style&gt;
+  .transformS {
+    transform: scale(2, 2);
+  }
+&lt;/style&gt;
+&lt;div class=&quot;box6&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;box6 transformS&quot;&gt;&lt;/div&gt;</pre>
+              </div>
+              <!-- .end .column -->
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section>
+          <div class="wrap">
+            <div class="content-left">
+              <h4><strong>Transform Options (Contd...) </strong></h4>
+            </div>
+            <div class="grid vertical-align">
+              <div class="column">
+                <h4><strong>skew</strong></h4>
+                <p>Skews the element at provided degree with respect to the axis</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <pre>{
+  transform: <u>skew(x<strong>deg</strong>, y<strong>deg</strong>) | skewX(x<strong>deg</strong>) | skewY(y<strong>deg</strong>);</u>
+}</pre>
+              </div>
+              <!-- .end .column -->
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section>
+          <div class="wrap">
+            <div class="grid">
+              <div class="column">
+                <style>
+                  .box6 {
+                    transition: transform 1s;
+                  }
+                  .transformSkX:active {
+                    transform: skewX(20deg);
+                  }
+                  .transformSkY:active {
+                    transform: skewY(20deg);
+                  }
+                  .transformSk:active {
+                    transform: skew(20deg, 20deg);
+                  }
+                </style>
+                <div class="column box6">none</div>
+                <div class="column box6 transformSkX">SKEW X</div>
+                <div class="column box6 transformSkY">SKEW Y</div>
+                <div class="column box6 transformSk">SKEW</div>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <pre>&lt;style&gt;
+  .box6 {
+    transition: transform 1s;
+  }
+  .transformSkX:active {
+    transform: skewX(20deg);
+  }
+  .transformSkY:active {
+    transform: skewY(20deg);
+  }
+  .transformSk:active {
+    transform: skew(20deg, 20deg);
+  }
+&lt;/style&gt;
+&lt;div class=&quot;grid vertical-align&quot;&gt;
+  &lt;div class=&quot;column box6&quot;&gt;none&lt;/div&gt;
+  &lt;div class=&quot;column box6 transformSkX&quot;&gt;SKEW X&lt;/div&gt;
+  &lt;div class=&quot;column box6 transformSkY&quot;&gt;SKEW Y&lt;/div&gt;
+  &lt;div class=&quot;column box6 transformSk&quot;&gt;SKEW&lt;/div&gt;
+&lt;/div&gt;</pre>
+              </div>
+              <!-- .end .column -->
+            </div>
+          </div>
+          <!-- .end .wrap-->
+        </section>
+        <section>
+          <div class="wrap">
+            <div class="content-left">
+              <h4><strong>Transform Options (Contd...) </strong></h4>
+            </div>
+            <div class="grid vertical-align">
+              <div class="column">
+                <h4><strong>matrix</strong></h4>
+                <p>The matrix() method take six parameters, which allows you to rotate, scale, move (translate), and skew elements.</p>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <pre>{
+  transform: <u>matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY());</u>
+}</pre>
+              </div>
+              <!-- .end .column -->
+            </div>
+            <div class="grid vertical-align">
+              <div class="column">
+                <style>
+                  .transformM:active {
+                    transform: matrix(2, 0, 0.5, 1, 150, 0);
+                  }
+                </style>
+                <div class="box6"></div>
+                <div class="box6 transformM"></div>
+              </div>
+              <!-- .end .column -->
+              <div class="column">
+                <pre>&lt;style&gt;
+  .transformM:active {
+    transform: matrix(2, 0, 0.5, 1, 150, 0);
+  }
+&lt;/style&gt;
+&lt;div class=&quot;box6&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;box6 transformM&quot;&gt;&lt;/div&gt;</pre>
+              </div>
+              <!-- .end .column -->
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section>
           <div class="wrap aligncenter">
             <h1><strong>3D Transforms</strong></h1>
           </div>
