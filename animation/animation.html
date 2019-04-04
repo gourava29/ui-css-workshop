@@ -14,7 +14,6 @@
 
     <title>CSS Animation</title>
     <link rel="stylesheet" type='text/css' media='all' href="css/webslides.css">
-    <link rel="stylesheet" type="text/css" href="animation.css">
   </head>
   <body>
     
@@ -714,6 +713,116 @@
         <section>
           <div class="wrap aligncenter">
             <h1><strong>3D Transforms</strong></h1>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section>
+          <div class="wrap">
+            <div class="content-left">
+              <h4><strong>Transform</strong></h4>
+              <p>Adds a third axis to existing transform properties which are translateZ, rotateZ, scaleZ</p>
+            </div>
+            <div class="grid vertical-align">
+              <div class="column">
+                  <img style="height:50vh;" width="auto" src="https://codropspz-tympanus.netdna-ssl.com/codrops/wp-content/uploads/2014/12/rotate3d.png"/>
+              </div>
+              <div class="column">
+                  <pre>.box-parent {
+  perspective: 100px;
+}
+.box6 {
+  box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.75);
+}</pre>
+              </div>
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section>
+          <div class="wrap">
+            <div class="content-left">
+              <h4><strong>Rotate3d</strong></h4>
+            </div>
+            <div class="grid vertical-align">
+              <div class="column">
+                  <style>
+                    .box-parent {
+                      perspective: 100px;
+                    }
+                    .box6 {
+                      box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.75);
+                    }
+                    .rotateX:active {
+                      transform: rotateX(45deg);
+                    }
+                  </style>
+                  <div class="box-parent">
+                    <div class="box6 rotateX"></div>
+                  </div>
+                  <pre>&lt;style&gt;
+.rotateX:active {
+  transform: rotateX(45deg);
+}
+&lt;/style&gt;
+&lt;div class=&quot;box-parent&quot;&gt;
+  &lt;div class=&quot;box6 rotateX&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+              </div>
+              <div class="column">
+                  <style>
+                    .rotateY:active {
+                      transform: rotateY(45deg);
+                    }
+                  </style>
+                  <div class="box-parent">
+                    <div class="box6 rotateY"></div>
+                  </div>
+                  <pre>&lt;style&gt;
+.rotateY:active {
+  transform: rotateY(45deg);
+}
+&lt;/style&gt;
+&lt;div class=&quot;box-parent&quot;&gt;
+  &lt;div class=&quot;box6 rotateY&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+              </div>
+              <div class="column">
+                  <style>
+                    .rotateZ:active {
+                      transform: rotateZ(45deg);
+                    }
+                  </style>
+                  <div class="box-parent">
+                    <div class="box6 rotateZ"></div>
+                  </div>
+                  <pre>&lt;style&gt;
+.rotateZ:active {
+  transform: rotateZ(45deg);
+}
+&lt;/style&gt;
+&lt;div class=&quot;box-parent&quot;&gt;
+  &lt;div class=&quot;box6 rotateZ&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+              </div>
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section>
+          <div class="wrap">
+            <div class="content-left">
+              <h4><strong>Perspective</strong></h4>
+              <img style="height:50vh;" src="https://codropspz-tympanus.netdna-ssl.com/codrops/wp-content/uploads/2014/12/perspective-distance.png"/>
+            </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section>
+          <div class="wrap">
+            <div class="content-left">
+              <h4><strong>Perspective-origin</strong></h4>
+              <img style="height:50vh;" src="https://codropspz-tympanus.netdna-ssl.com/codrops/wp-content/uploads/2014/12/perspective-origin.png"/>
+            </div>
           </div>
           <!-- .end .wrap -->
         </section>
