@@ -207,14 +207,30 @@
                 <p>Used to write animation containing multiple states chained together</p>
               </div>
               <!-- .end .column -->
+            </div>
+            <div class="grid vertical-align">
               <div class="column">
                 <pre>@keyframes mymove {
   from {transform: translateX(0px);}
   to {transform: translateX(200px);}
-}</pre>
+}
+@keyframes mymove {
+  0% {transform: translateX(0px);}
+  50% {transform: translateX(50px);}
+  100% {transform: translateX(200px);}
+}
+{
+  animation: <u>name</u> <u>duration</u> <u>timing-function delay</u> <u>iteration-count</u> <u>direction</u> <u>fill-mode</u> <u>play-state</u>;
+}
+</pre>
               </div>
               <!-- .end .column -->
             </div>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+        <section>
+          <div class="wrap">
             <div class="grid vertical-align">
               <div class="column">
                 <style>
@@ -226,7 +242,9 @@
                     height: 50px;
                     width: 50px;
                     background: red;
-                    animation: mymove .5s infinite;
+                  }
+                  .box2:active {
+                    animation: mymove 2s;
                   }
                 </style>
                 <div class="box2"></div>
@@ -242,7 +260,9 @@
     height: 50px;
     width: 50px;
     background: red;
-    animation: mymove 1s infinite;
+  }
+  .box2:active {
+    animation: mymove 2s;
   }
 &lt;/style&gt;
 &lt;div class=&quot;box2&quot;&gt;&lt;/div&gt;</pre>
@@ -250,7 +270,6 @@
               <!-- .end .column -->
             </div>
           </div>
-          <!-- .end .wrap -->
         </section>
         <section>
           <div class="wrap">
@@ -363,55 +382,54 @@
               <!-- .end .column -->
             </div>
             <div class="grid vertical-align">
-              <div class="column">
+              <style>
+                @keyframes noneFillMode {
+                  from {transform: translateX(50px);background: red;}
+                  to {transform: translateX(200px);background: blue;}
+                }
+                .fill-mode:hover div {
+                  animation: noneFillMode 5s 2s;
+                }
+              </style>
+              <div class="column fill-mode">
                 <style>
-                  @keyframes noneFillMode {
-                    from {transform: translateY(0px);background: red;}
-                    to {transform: translateY(50px);background: blue;}
-                  }
-                  #box2 { width: 50px; height: 50px; animation: noneFillMode 2s;}
+                  #box2 { width: 50px; height: 50px; background: gray;}
                 </style>
                 <h6>none</h6>
                 <div id="box2"></div>
-              </div>
-              <!-- .end .column -->
-              <div class="column">
                 <style>
-                  @keyframes noneFillMode {
-                    from {transform: translateY(0px);background: red;}
-                    to {transform: translateY(50px);background: blue;}
-                  }
-                  #box3 { width: 50px; height: 50px; animation: noneFillMode 2s; animation-fill-mode: forwards;}
+                  #box3 { width: 50px; height: 50px; background: gray; animation-fill-mode: forwards;}
                 </style>
                 <h6>forwards</h6>
                 <div id="box3"></div>
-              </div>
-              <!-- .end .column -->
-              <div class="column">
                 <style>
-                  @keyframes noneFillMode {
-                    from {transform: translateY(0px);background: red;}
-                    to {transform: translateY(50px);background: blue;}
-                  }
-                  #box4 { width: 50px; height: 50px; animation: noneFillMode 2s; animation-fill-mode: backwards;}
+                  #box4 { width: 50px; height: 50px; background: gray; animation-fill-mode: backwards;}
                 </style>
                 <h6>backwards</h6>
                 <div id="box4"></div>
-              </div>
-              <!-- .end .column -->
-              <div class="column">
                 <style>
-                  @keyframes noneFillMode {
-                    from {transform: translateY(0px);background: red;}
-                    to {transform: translateY(50px);background: blue;}
-                  }
-                  #box5 { width: 50px; height: 50px; animation: noneFillMode 2s; animation-fill-mode: both;}
+                  #box5 { width: 50px; height: 50px; background: gray; animation-fill-mode: both;}
                 </style>
                 <h6>both</h6>
                 <div id="box5"></div>
               </div>
               <!-- .end .column -->
+              <div class="column">
+                <pre>@keyframes noneFillMode {
+  from {transform: translateX(50px);background: red;}
+  to {transform: translateX(200px);background: blue;}
+}
+#box2 {
+  width: 50px; height: 50px; background: gray;
+  animation: noneFillMode 5s 2s;
+}</pre>
+              </div>
+              <!-- .end .column -->
             </div>
+          </div>
+        </section>
+        <section>
+          <div class="wrap">
             <div class="grid vertical-align">
               <div class="column">
                 <h4><strong>animation-play-state</strong></h4>
@@ -432,6 +450,13 @@
             <h1><strong>transition vs @keyframes</strong></h1>
           </div>
           <!-- .end .wrap -->
+        </section>
+        <section>
+          <div class="wrap aligncenter">
+            <h1>
+              <a target="_blank" href="https://developers.google.com/web/fundamentals/performance/rendering/">Browser Performance Rendering</a>
+            </h1>
+          </div>
         </section>
         <section>
           <div class="wrap aligncenter">
